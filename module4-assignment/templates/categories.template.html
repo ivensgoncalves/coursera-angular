@@ -1,0 +1,14 @@
+<div class="breadcrumb">
+  <a ui-sref="home">Home</a>
+  <span class="separator">&gt;</span>
+  <span class="actual">Categories</span>
+</div>
+<div class="categories">
+  <div class="menu">
+    <ul>
+      <li ng-repeat="item in $ctrl.items" ui-sref="categories.items({ id: item.short_name })">{{ item.name }}</li>
+    </ul>
+  </div>
+
+  <ui-view class="detail"></ui-view>
+</div>

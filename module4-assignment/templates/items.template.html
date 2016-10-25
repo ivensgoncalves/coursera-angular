@@ -1,0 +1,15 @@
+<h2>{{ $ctrl.category.name }}</h2>
+<table border="0" cellspadding="0" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in $ctrl.items" ng-class="{'even': $even, 'odd': $odd}">
+      <td>{{ item.name }}</td>
+      <td>{{ item.description }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,26 @@
+* {padding:0; margin:0; list-style:none; text-decoration:none}
+body {font-family: Verdana, Arial, Times}
+.container {width:1000px; margin:50px auto}
+h1 {background-color:#ddd; text-align:center; padding:10px 0 3px; font-size:20px; color:#555; border:1px solid #ccc; border-bottom:none}
+.view-content, .view-content .categories .menu {min-height:400px}
+.view-content {border:1px solid #ccc; border-top:none; display:block; position:relative}
+.view-content .breadcrumb {text-align:center; font-size:13px; background-color:#ddd; padding-bottom:7px; border-bottom:1px solid #eee;}
+.view-content .breadcrumb a {color:#333}
+.view-content .breadcrumb a:hover {text-decoration:underline}
+.view-content .breadcrumb .actual {font-weight:bold}
+.view-content .welcome {text-align:center; width:100%; position:absolute; top:40%}
+.view-content .welcome .welcome-text {font-size:25px; margin-bottom:20px}
+.view-content .welcome .welcome-link a {font-size:18px; color:#6079FF; font-weight:normal}
+.view-content .welcome .welcome-link a:hover {text-decoration:underline}
+.view-content .categories {display:table; width:100%}
+.view-content .categories .menu {display:table-cell; vertical-align:top; min-width:220px; width:1px; background-color:#eee; border:1px solid #f5f5f5; border-top:none; border-bottom:none}
+.view-content .categories .menu ul li {padding:10px; border-bottom:1px solid #ddd; cursor:pointer; color:#333; font-size:14px}
+.view-content .categories .menu ul li:hover {background-color:#ddd}
+.view-content .categories .detail {display:table-cell; padding:20px}
+.view-content .categories .detail h2 {border-bottom:1px solid #555; color:#555}
+.view-content .categories .detail table {border:none; width:100%}
+.view-content .categories .detail table thead {background-color:#555; color:white}
+.view-content .categories .detail table thead th {text-align:left; font-size:14px; padding:7px}
+.view-content .categories .detail table td {font-size:14px; padding:5px 7px}
+.view-content .categories .detail table .even {background-color:#eee}
+.view-content .categories .detail table .odd {background-color:#ccc}

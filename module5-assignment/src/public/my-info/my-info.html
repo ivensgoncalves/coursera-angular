@@ -1,0 +1,29 @@
+<div class="myinfo-container container">
+    <p class="not-registered" ng-if="!myInfoCtrl.isRegistered()">Not Signed Up Yet. <a href="#" ui-sref="public.signUp">Sign up Now!</a></p>
+
+    <div class="user-data" ng-if="myInfoCtrl.isRegistered()">
+      <img ng-src="images/menu/{{ myInfoCtrl.userData.favorite }}/{{ myInfoCtrl.userData.favorite }}.jpg" />
+      <div class="data">
+        <div class="data-row">
+          <span class="field">First Name: </span>
+          <span class="value">{{ myInfoCtrl.userData.firstName }}</span>
+        </div>
+        <div class="data-row">
+          <span class="field">Last Name: </span>
+          <span class="value">{{ myInfoCtrl.userData.lastName }}</span>
+        </div>
+        <div class="data-row">
+          <span class="field">Email Address: </span>
+          <span class="value">{{ myInfoCtrl.userData.emailAddress }}</span>
+        </div>
+        <div class="data-row">
+          <span class="field">Phone Number: </span>
+          <span class="value">{{ myInfoCtrl.userData.phone }}</span>
+        </div>
+        <div class="data-row">
+          <span class="field">Favorite Dish: </span>
+          <span class="value">{{ myInfoCtrl.userData.favorite }}</span>
+        </div>
+      </div>
+    </div>
+</div>

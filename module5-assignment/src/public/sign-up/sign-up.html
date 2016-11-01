@@ -1,0 +1,82 @@
+<div class="signup-container container" ng-controller="SignUpController as signUpCtrl">
+
+  <div class="registered" ng-if="signUpCtrl.isRegistered()">
+    <p>Your information has been saved.</p>
+  </div>
+
+  <form method="post" name="signUpCtrl.signUpForm" novalidate ng-if="!signUpCtrl.isRegistered()">
+    <fieldset>
+      <legend>Sign Up</legend>
+
+      <div class="divFirstName divField">
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          ng-model="signUpCtrl.user.firstName"
+          required
+        />
+        <span class="error" ng-if="signUpCtrl.signUpForm.firstName.$error.required && signUpCtrl.signUpForm.firstName.$touched">First Name is required!</span>
+        <span class="success" ng-if="signUpCtrl.signUpForm.firstName.$valid && signUpCtrl.signUpForm.firstName.$touched">Passed!</span>
+      </div>
+
+      <div class="divLastName divField">
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          ng-model="signUpCtrl.user.lastName"
+          required
+        />
+        <span class="error" ng-if="signUpCtrl.signUpForm.lastName.$error.required && signUpCtrl.signUpForm.lastName.$touched">Last Name is required!</span>
+        <span class="success" ng-if="signUpCtrl.signUpForm.lastName.$valid && signUpCtrl.signUpForm.lastName.$touched">Passed!</span>
+      </div>
+
+      <div class="divEmailAddress divField">
+        <input
+          type="email"
+          name="emailAddress"
+          placeholder="Email Address"
+          ng-model="signUpCtrl.user.emailAddress"
+          required
+        />
+        <span class="error" ng-if="signUpCtrl.signUpForm.emailAddress.$error.required && signUpCtrl.signUpForm.emailAddress.$touched">Email Address is required!</span>
+        <span class="error" ng-if="!signUpCtrl.signUpForm.emailAddress.$error.required && signUpCtrl.signUpForm.emailAddress.$invalid && signUpCtrl.signUpForm.emailAddress.$touched">Email Address is invalid!</span>
+        <span class="success" ng-if="signUpCtrl.signUpForm.emailAddress.$valid && signUpCtrl.signUpForm.emailAddress.$touched">Passed!</span>
+      </div>
+
+      <div class="divPhone divField">
+        <input
+          type="text"
+          name="phone"
+          placeholder="Phone Number ###-###-####"
+          ng-model="signUpCtrl.user.phone"
+          required
+          pattern="(\d{3})-(\d{3})-(\d{4})"
+        />
+        <span class="error" ng-if="signUpCtrl.signUpForm.phone.$error.required && signUpCtrl.signUpForm.phone.$touched">Phone Number is required!</span>
+        <span class="error" ng-if="!signUpCtrl.signUpForm.phone.$error.required && signUpCtrl.signUpForm.phone.$invalid && signUpCtrl.signUpForm.phone.$touched">Phone Number is invalid!</span>
+        <span class="success" ng-if="signUpCtrl.signUpForm.phone.$valid && signUpCtrl.signUpForm.phone.$touched">Passed!</span>
+      </div>
+
+      <div class="divFavorite divField">
+        <input
+          type="text"
+          name="favorite"
+          placeholder="Favorite Dish"
+          ng-model="signUpCtrl.user.favorite"
+          required
+          ng-change="signUpCtrl.dishChanged()"
+          ng-blur="signUpCtrl.validateFavorite()"
+        />
+        <span class="error" ng-if="signUpCtrl.signUpForm.favorite.$error.required && signUpCtrl.signUpForm.favorite.$touched">Favorite Dish is required!</span>
+        <span class="error" ng-if="!signUpCtrl.signUpForm.favorite.$error.required && signUpCtrl.signUpForm.favorite.$error.notFound && signUpCtrl.signUpForm.favorite.$touched">No such menu number exists.</span>
+        <span class="success" ng-if="signUpCtrl.signUpForm.favorite.checked && signUpCtrl.signUpForm.favorite.$valid && signUpCtrl.signUpForm.favorite.$touched">Passed!</span>
+      </div>
+
+      <button ng-disabled="signUpCtrl.signUpForm.$invalid || signUpCtrl.hasPendingTasks()" ng-click="signUpCtrl.submit()">Submit</button>
+
+    </fieldset>
+  </form>
+
+</div>

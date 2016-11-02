@@ -7,6 +7,7 @@ angular.module('public')
 SignUpController.$inject = ['UserService', 'MenuService'];
 function SignUpController(UserService, MenuService) {
   var $ctrl = this;
+  var menuItem = null;
 
   $ctrl.isRegistered = function(){
     return UserService.hasData();
@@ -26,8 +27,14 @@ function SignUpController(UserService, MenuService) {
 
     $ctrl.signUpForm.favorite.loading = true;
     MenuService.getMenuItemDetailByShortName($ctrl.user.favorite)
-      .then(function(data){ $ctrl.signUpForm.favorite.$setValidity('notFound', true); })
-      .catch(function(){ $ctrl.signUpForm.favorite.$setValidity('notFound', false); })
+      .then(function(data){
+        $ctrl.signUpForm.favorite.$setValidity('notFound', true);
+        menuItem = data;
+      })
+      .catch(function(){
+        $ctrl.signUpForm.favorite.$setValidity('notFound', false);
+        menuItem = null;
+      })
       .finally(function(){
         $ctrl.signUpForm.favorite.checked = true;
         $ctrl.signUpForm.favorite.loading = false;
@@ -41,7 +48,7 @@ function SignUpController(UserService, MenuService) {
       lastName: $ctrl.user.lastName,
       emailAddress: $ctrl.user.emailAddress,
       phone: $ctrl.user.phone,
-      favorite: $ctrl.user.favorite
+      favorite: menuItem
     });
   }
 }

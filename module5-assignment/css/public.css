@@ -121,9 +121,10 @@ h3.menu-item-title {
 .signup-container .success {color:lightgreen; margin-left:15px}
 .signup-container button {padding:7px 30px; color:black}
 .signup-container button[disabled] { color:white; }
-.myinfo-container .user-data {font-size:20px; overflow:hidden}
-.myinfo-container .user-data img, .myinfo-container .user-data .data {float:left}
-.myinfo-container .user-data .data {margin-left:20px}
+.myinfo-container .user-data {font-size:20px}
+.myinfo-container .user-data .favorite-dish {overflow:hidden}
+.myinfo-container .user-data .favorite-dish img, .myinfo-container .user-data .favorite-dish .details {float:left}
+.myinfo-container .user-data .favorite-dish .details {margin-left:20px; width:700px}
 .myinfo-container .user-data .data-row .field {}
 .myinfo-container .user-data .data-row .value {color:#bbb}
 .myinfo-container .user-data .data-row img {display:block}

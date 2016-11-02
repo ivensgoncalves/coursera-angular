@@ -25,7 +25,7 @@ function SignUpController(UserService, MenuService) {
     if($ctrl.signUpForm.favorite.checked !== false){ return; }
 
     $ctrl.signUpForm.favorite.loading = true;
-    MenuService.getCategoryDetailByShortName($ctrl.user.favorite)
+    MenuService.getMenuItemDetailByShortName($ctrl.user.favorite)
       .then(function(data){ $ctrl.signUpForm.favorite.$setValidity('notFound', true); })
       .catch(function(){ $ctrl.signUpForm.favorite.$setValidity('notFound', false); })
       .finally(function(){

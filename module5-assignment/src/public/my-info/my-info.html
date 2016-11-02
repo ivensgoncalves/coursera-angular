@@ -2,7 +2,7 @@
     <p class="not-registered" ng-if="!myInfoCtrl.isRegistered()">Not Signed Up Yet. <a href="#" ui-sref="public.signUp">Sign up Now!</a></p>
 
     <div class="user-data" ng-if="myInfoCtrl.isRegistered()">
-      <img ng-src="images/menu/{{ myInfoCtrl.userData.favorite }}/{{ myInfoCtrl.userData.favorite }}.jpg" />
+	  <img ng-src="{{myInfoCtrl.apiPath}}/images/{{myInfoCtrl.userData.favorite}}.jpg" alt="{{myInfoCtrl.userData.favorite}}">
       <div class="data">
         <div class="data-row">
           <span class="field">First Name: </span>
